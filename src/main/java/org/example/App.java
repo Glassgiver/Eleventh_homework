@@ -32,8 +32,19 @@ public class App
         for (String elements: words) {
             words_map.put(elements, words_map.getOrDefault(elements, 0)+1);
         }
-        System.out.println("All unique words: " + words_map.keySet());
-        System.out.println("Count of each word: " + words_map);
+        System.out.println("All unique words: ");
+        for (String elements: words_map.keySet()) {
+            System.out.println(elements);
+        }
+        System.out.println();
+        System.out.println("Count of each word: ");
+        for (Map.Entry<String, Integer> e: words_map.entrySet()) {
+            if(e.getValue() == 1){
+                System.out.println(e.getKey() + " was " + e.getValue() + " time");
+            }
+            else System.out.println(e.getKey() + " was " + e.getValue() + " times");
+        }
+        System.out.println();
     }
 
 }
